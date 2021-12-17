@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+
+
+ <a  class="btn btn-danger center " href="{% url 'paradiseapp:addchatbot'  %}">add new chat bot</a>
+
+<div class="container">
+    <div class="row">
+        {% for i in chatbot %}
+        <div class="col-md-3">
+
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" width="200px" height="200px">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+    <a href="{% url  'paradiseapp:detail' i.id %}" class="btn btn-primary">see more</a>
+  </div>
+</div>
+C:\Users\growv\Desktop\ENGIEERING
+        </div>
+          {% endfor %}
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
